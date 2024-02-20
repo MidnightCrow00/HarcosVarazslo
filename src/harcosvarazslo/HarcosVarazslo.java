@@ -7,20 +7,22 @@ public class HarcosVarazslo {
 
     public static void main(String[] args) {
         final int MERET = 3;
-        String palya = "___";
-
-        System.out.println("");
         for(int i = 0 ; i < 10; i++){
             int harPoz = (int)(Math.random()*MERET);
             int varPoz = (int)(Math.random()*MERET);
-            if (harPoz==varPoz){
+            String palya = "___";
+            if (harPoz == varPoz){
+                palya = palya.substring(0,harPoz) + "X" + palya.substring(harPoz+1);
                 if(harPoz == 0){
                     palya = "X__";
                 }else{
                     palya = harPoz == 1 ? "_X_":"__X";
                 }
             }else{
-                if(harPoz == 0){
+                palya = palya.substring(0,harPoz) + "H" + palya.substring(harPoz+1);
+                palya = palya.substring(0,varPoz) + "V" + palya.substring(varPoz+1);
+                
+                /*if(harPoz == 0){
                     if (varPoz== 1){
                         palya = "HV_";
                     }else{
@@ -38,7 +40,7 @@ public class HarcosVarazslo {
                     }else{
                         palya = "_VH";
                     }
-                }
+                }*/
             }
             System.out.println(palya);
             }
