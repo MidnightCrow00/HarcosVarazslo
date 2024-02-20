@@ -3,6 +3,7 @@ package harcosvarazslo;
 
 
 public class Magyarazat {
+    
     public static void main(String[] args) {
         String eredeti = "abc.12x";
         int hossz = eredeti.length();
